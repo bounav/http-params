@@ -10,6 +10,9 @@ namespace HttpParamsUtility
     {
         private readonly NameValueCollection parameters;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HttpParams" /> class.
+        /// </summary>
         public HttpParams()
         {
             parameters = HttpUtility.ParseQueryString("");
