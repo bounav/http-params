@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpParamsUtility", "HttpParamsUtility\HttpParamsUtility.csproj", "{2B29E926-99A2-4221-939E-2884F4D6115F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpParamsUtility.Test", "HttpParamsUtility.Test\HttpParamsUtility.Test.csproj", "{452981DB-5532-4382-9FBE-9DB1293004AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B29E926-99A2-4221-939E-2884F4D6115F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B29E926-99A2-4221-939E-2884F4D6115F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B29E926-99A2-4221-939E-2884F4D6115F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B29E926-99A2-4221-939E-2884F4D6115F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452981DB-5532-4382-9FBE-9DB1293004AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452981DB-5532-4382-9FBE-9DB1293004AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452981DB-5532-4382-9FBE-9DB1293004AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452981DB-5532-4382-9FBE-9DB1293004AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
