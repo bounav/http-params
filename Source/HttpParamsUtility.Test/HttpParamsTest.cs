@@ -29,6 +29,24 @@ namespace HttpParamsUtility
         }
 
         [Test]
+        public void TestAddNameValueWhenValueNotSet()
+        {
+            var paramameters = new HttpParams().AddWhenSet("key1", null)
+                                               .AddWhenSet("key2", string.Empty);
+
+            Assert.AreEqual(0, paramameters.Count);
+        }
+
+        [Test]
+        public void TestAddNameValuewhenSet()
+        {
+            var parameters = new HttpParams().AddWhenSet("key", "value");
+
+            Assert.AreEqual(1, parameters.Count);
+            Assert.AreEqual("key=value", parameters.ToString());
+        }
+
+        [Test]
         public void TestRemove()
         {
             var parameters = new HttpParams().Add("key", "value")

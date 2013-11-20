@@ -66,6 +66,22 @@ namespace HttpParamsUtility
         }
 
         /// <summary>
+        /// Adds an entry with specified key and value into to the <see cref="NameValueCollection"/> only if the value is not null or empty.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public HttpParams AddWhenSet(string name, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                parameters.Add(name, value);
+            }
+
+            return this;
+        }
+
+        /// <summary>
         /// Removes the entries with the specified key from the NameObjectCollectionBase instance.
         /// </summary>
         /// <param name="name">The name.</param>
