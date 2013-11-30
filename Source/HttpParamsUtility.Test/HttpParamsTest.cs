@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace HttpParamsUtility
 {
@@ -15,6 +16,28 @@ namespace HttpParamsUtility
             parameters.Add("key", "value");
 
             Assert.AreEqual(1, parameters.Count);
+        }
+
+        [Test]
+        public void TestAddNameAndIntValue()
+        {
+            var parameters = new HttpParams();
+
+            parameters.Add("key", 123);
+
+            Assert.AreEqual(1, parameters.Count);
+            Assert.AreEqual("key=123", parameters.ToString());
+        }
+
+        [Test]
+        public void TestAddNameAndInt64Value()
+        {
+            var parameters = new HttpParams();
+
+            parameters.Add("key", (Int64)123);
+
+            Assert.AreEqual(1, parameters.Count);
+            Assert.AreEqual("key=123", parameters.ToString());
         }
 
         [Test]

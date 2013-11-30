@@ -1,4 +1,6 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
+using System.Globalization;
 using System.Web;
 
 namespace HttpParamsUtility
@@ -48,6 +50,34 @@ namespace HttpParamsUtility
         public HttpParams Add(NameValueCollection c)
         {
             parameters.Add(c);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds an entry with the specified key and value into the <see cref="NameValueCollection" /> instance.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The int value.</param>
+        /// <returns></returns>
+        /// <remarks>The value is converted to a string with the <see cref="CultureInfo.InvariantCulture"/> </remarks>
+        public HttpParams Add(string name, int value)
+        {
+            parameters.Add(name, value.ToString(CultureInfo.InvariantCulture));
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds an entry with the specified key and value into the <see cref="NameValueCollection" /> instance.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The Int64 value.</param>
+        /// <returns></returns>
+        /// <remarks>The value is converted to a string with the <see cref="CultureInfo.InvariantCulture"/> </remarks>
+        public HttpParams Add(string name, Int64 value)
+        {
+            parameters.Add(name, value.ToString(CultureInfo.InvariantCulture));
 
             return this;
         }
