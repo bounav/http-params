@@ -26,10 +26,7 @@ namespace HttpParamsUtility
         /// <value>
         /// The count.
         /// </value>
-        public int Count
-        {
-            get { return parameters.Count; }
-        }
+        public int Count => parameters.Count;
 
         /// <summary>
         /// Gets a <see cref="NameObjectCollectionBase.KeysCollection" /> instance that contains all the keys in the NameObjectCollectionBase instance.
@@ -37,10 +34,7 @@ namespace HttpParamsUtility
         /// <value>
         /// The keys.
         /// </value>
-        public virtual NameObjectCollectionBase.KeysCollection Keys
-        {
-            get { return parameters.Keys; }
-        }
+        public virtual NameObjectCollectionBase.KeysCollection Keys => parameters.Keys;
 
         /// <summary>
         /// Adds an entry with the specified key and value into the <see cref="NameValueCollection" /> instance.
