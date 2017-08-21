@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.0-alpha</Version>
+    <Version>2.0.1-alpha</Version>
     <PackageId>HttpParamsUtility</PackageId>
     <Authors>Benjamin Fourmond</Authors>
     <Company>Benjamin Fourmond</Company>
     <Product>HttpParamsUtility</Product>
     <PackageProjectUrl>https://github.com/bounav/http-params</PackageProjectUrl>
-    <Description>Convinience class wrapping access to an HTTP friendy name value collection with a fluent interface.</Description>
+    <Description>Convenience class wrapping access to an HTTP friendy name value collection with a fluent interface.</Description>
     <PackageReleaseNotes>- No API changes.
 - Targeting .NET Standard 2.0.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
