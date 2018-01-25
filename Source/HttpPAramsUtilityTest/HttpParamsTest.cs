@@ -1,86 +1,85 @@
 ﻿using System;
-using NUnit.Framework;
+using Xunit;
 
 namespace HttpParamsUtility
 {
-    [TestFixture]
     public class HttpParamsTest
     {
-        [Test]
+        [Fact]
         public void TestCount()
         {
             var parameters = new HttpParams();
 
-            Assert.AreEqual(0, parameters.Count);
+            Assert.Equal(0, parameters.Count);
 
             parameters.Add("key", "value");
 
-            Assert.AreEqual(1, parameters.Count);
+            Assert.Equal(1, parameters.Count);
         }
 
-        [Test]
+        [Fact]
         public void TestAddNameAndIntValue()
         {
             var parameters = new HttpParams();
 
             parameters.Add("key", 123);
 
-            Assert.AreEqual(1, parameters.Count);
-            Assert.AreEqual("key=123", parameters.ToString());
+            Assert.Equal(1, parameters.Count);
+            Assert.Equal("key=123", parameters.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestAddNameAndInt64Value()
         {
             var parameters = new HttpParams();
 
             parameters.Add("key", (Int64)123);
 
-            Assert.AreEqual(1, parameters.Count);
-            Assert.AreEqual("key=123", parameters.ToString());
+            Assert.Equal(1, parameters.Count);
+            Assert.Equal("key=123", parameters.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestAddNameValueCollection()
         {
             var otherParams = new HttpParams().Add("key", "value");
 
             var parameters = new HttpParams().Add("otherKey", "otherValue").Add(otherParams.ToNameValueCollection());
 
-            Assert.AreEqual(2, parameters.Count);
-            Assert.AreEqual("otherKey=otherValue&key=value", parameters.ToString());
+            Assert.Equal(2, parameters.Count);
+            Assert.Equal("otherKey=otherValue&key=value", parameters.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestAddNameValueWhenValueNotSet()
         {
             var paramameters = new HttpParams().AddWhenSet("key1", null)
                                                .AddWhenSet("key2", string.Empty);
 
-            Assert.AreEqual(0, paramameters.Count);
+            Assert.Equal(0, paramameters.Count);
         }
 
-        [Test]
+        [Fact]
         public void TestAddNameValuewhenSet()
         {
             var parameters = new HttpParams().AddWhenSet("key", "value");
 
-            Assert.AreEqual(1, parameters.Count);
-            Assert.AreEqual("key=value", parameters.ToString());
+            Assert.Equal(1, parameters.Count);
+            Assert.Equal("key=value", parameters.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestRemove()
         {
             var parameters = new HttpParams().Add("key", "value")
                                              .Add("otherKey", "otherValue")
                                              .Remove("key");
 
-            Assert.AreEqual(1, parameters.Count);
-            Assert.AreEqual("otherKey=otherValue", parameters.ToString());
+            Assert.Equal(1, parameters.Count);
+            Assert.Equal("otherKey=otherValue", parameters.ToString());
         }
 
-        [Test]
+        [Fact]
         public void TestClear()
         {
             var parameters = new HttpParams().Add("key", "value")
@@ -88,15 +87,15 @@ namespace HttpParamsUtility
 
             parameters.Clear();
 
-            Assert.AreEqual(0, parameters.Count);
+            Assert.Equal(0, parameters.Count);
         }
 
-        [Test]
+        [Fact]
         public void TestValuesAreUrlEncoded()
         {
             var parameters = new HttpParams().Add("url", "http://domain.com/hello/world");
 
-            Assert.AreEqual("url=http%3a%2f%2fdomain.com%2fhello%2fworld", parameters.ToString());
+            Assert.Equal("url=http%3a%2f%2fdomain.com%2fhello%2fworld", parameters.ToString());
         }
     }
 }
