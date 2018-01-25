@@ -3,6 +3,8 @@ http-param
 
 Convienience class wrapping access to an HTTP friendly `System.Collections.Specialized.NameValueCollection` with a fluent interface.
 
+![build status](https://ci.appveyor.com/api/projects/status/8spw3h7j1xaa1v0l?svg=true)
+
 ### Usage:
 
     var parameters = new HttpParams().Add("key", "value")
